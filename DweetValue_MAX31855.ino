@@ -10,9 +10,9 @@
 
 // Example creating a thermocouple instance with software SPI on any three
 // digital IO pins.
-#define MAXDO   4
-#define MAXCS   0
-#define MAXCLK  2
+#define MAXDO   4 //(D2)
+#define MAXCS   0 //(D3)
+#define MAXCLK  2 //(D4)
 
 dweet client;
 // initialize the Thermocouple
@@ -39,7 +39,7 @@ void loop() {
    Serial.print("Internal Temp = ");
    Serial.println(thermocouple.readInternal());
 
-   double c = thermocouple.readCelsius();
+   float c = thermocouple.readCelsius();
    if (isnan(c)) {
      Serial.println("Something wrong with thermocouple!");
    } else {
@@ -49,7 +49,7 @@ void loop() {
    //Serial.print("F = ");
    //Serial.println(thermocouple.readFarenheit());
    Serial.print("Asking for temperature..");
-   double tempMeasurement = thermocouple.readCelsius();
+   float tempMeasurement = thermocouple.readCelsius();
    String temp = String(tempMeasurement);
    Serial.print("\nSending with Dweet:");
    client.add("test", temp);
