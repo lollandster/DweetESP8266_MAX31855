@@ -2,8 +2,8 @@
 #include "Adafruit_MAX31855.h"
 #include "dweetESP8266.h"
 #define THIG_NAME  "keramikk-ovn"  // Put here your thing name
-#define WIFISSID "---"
-#define PASSWORD "---"
+#define WIFISSID "--"
+#define PASSWORD "--"
 
 // Default connection is using software SPI, but comment and uncomment one of
 // the two examples below to switch between software SPI and hardware SPI:
@@ -14,6 +14,7 @@
 #define MAXCS   0
 #define MAXCLK  2
 
+dweet client;
 // initialize the Thermocouple
 Adafruit_MAX31855 thermocouple(MAXCLK, MAXCS, MAXDO);
 
